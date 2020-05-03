@@ -1,6 +1,9 @@
 package it.polito.tdp.poweroutages.DAO;
 
 import java.sql.Connection;
+import java.util.List;
+
+import it.polito.tdp.poweroutages.model.PowerOutages;
 
 public class TestPowerOutagesDAO {
 
@@ -18,6 +21,14 @@ public class TestPowerOutagesDAO {
 		} catch (Exception e) {
 			System.err.println("Test FAILED");
 		}
+		PowerOutageDAO dao = new PowerOutageDAO() ;
+		List<PowerOutages> lista = dao.getPowerOutages(8);
+		
+		PowerOutages p1 = lista.get(0);
+		
+		
+	
+		System.out.println(lista.toString());
 
 	}
 

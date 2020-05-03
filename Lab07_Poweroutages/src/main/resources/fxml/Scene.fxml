@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.poweroutages.FXMLController">
    <top>
@@ -17,4 +24,80 @@
          </font>
       </Label>
    </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox>
+               <children>
+                  <ImageView fitHeight="277.0" fitWidth="314.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../NERC-map.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Select NERC">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="25.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBox" onAction="#doChoice" prefWidth="120.0">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Max year">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="25.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtYear" disable="true">
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Label text="Max hours">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="25.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtHours" disable="true">
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnSearch" alignment="CENTER_RIGHT" disable="true" mnemonicParsing="false" onAction="#doSearch" text="Worst Case Analysis">
+                     <VBox.margin>
+                        <Insets left="120.0" top="50.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <TextArea fx:id="txtResult" editable="false" prefHeight="147.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TextArea>
+   </bottom>
 </BorderPane>
